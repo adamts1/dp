@@ -190,9 +190,8 @@ function App() {
             </div>
             <div className="product-details">
               <span className="section-label">אודות הסיכה</span>
-              <h2>סיכת אמייל איכותית</h2>
               <p className="product-description">
-                סיכה סמלית בעיצוב מינימליסטי ורציני. עשויה מחומרים איכותיים
+                עשויה מחומרים איכותיים
                 ומיוצרת בישראל. מתאימה לענידה על דש חליפה, תיק, או מדים.
               </p>
               <div className="product-price">₪49</div>
