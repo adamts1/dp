@@ -1,0 +1,290 @@
+import { useEffect, useRef } from 'react'
+import pinImage from './assets/dp.jpeg'
+
+function App() {
+  const navbarRef = useRef(null)
+
+  useEffect(() => {
+    // Navbar scroll effect
+    const handleScroll = () => {
+      if (navbarRef.current) {
+        if (window.scrollY > 50) {
+          navbarRef.current.classList.add('scrolled')
+        } else {
+          navbarRef.current.classList.remove('scrolled')
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1'
+          entry.target.style.transform = 'translateY(0)'
+        }
+      })
+    }, observerOptions)
+
+    document.querySelectorAll('.value-card, .why-point, .product-features li').forEach(el => {
+      el.style.opacity = '0'
+      el.style.transform = 'translateY(20px)'
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease'
+      observer.observe(el)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
+  const scrollToProduct = (e) => {
+    e.preventDefault()
+    document.getElementById('product')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  return (
+    <>
+      {/* Navigation */}
+      <nav id="navbar" ref={navbarRef}>
+        <div className="container nav-content">
+          <div className="logo">סיכת הצדק</div>
+          <button className="nav-cta" onClick={scrollToProduct}>
+            לרכישה
+          </button>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="hero-content">
+          <div className="hero-image animate-in">
+            <img src={pinImage} alt="סיכת הצדק" className="hero-pin-image" />
+          </div>
+          <span className="hero-badge animate-in delay-1">סמל של עמדה • ביטוי דמוקרטי</span>
+          <h1 className="animate-in delay-2">
+            צדק הוא לא נקמה.<br />
+            צדק הוא <span>אחריות</span>.
+          </h1>
+          <p className="hero-subtitle animate-in delay-3">
+            סיכה סמלית שמבטאת תמיכה בחקיקת עונש מוות למחבלים מורשעים –
+            במסגרת חוקית ודמוקרטית. לא שנאה. לא אלימות. עמדה ציבורית ברורה.
+          </p>
+          <a href="#product" className="cta-button animate-in delay-4" onClick={scrollToProduct}>
+            רוכש סיכה – מביע עמדה
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5m0 0l7-7m-7 7l7 7" />
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="values">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-label">מה הסיכה מייצגת</span>
+            <h2 className="section-title">ארבעה ערכים. עמדה אחת.</h2>
+            <p className="section-description">
+              הסיכה היא לא רק אביזר – היא הצהרה שקטה אך ברורה על הערכים שמנחים אותנו כחברה.
+            </p>
+          </div>
+          <div className="values-grid">
+            <div className="value-card">
+              <svg className="value-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.97zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.97z" />
+              </svg>
+              <h3>תמיכה בהרתעה</h3>
+              <p>אמונה כי עונש הולם יכול למנוע פיגועים עתידיים ולהגן על חיי אזרחים תמימים.</p>
+            </div>
+            <div className="value-card">
+              <svg className="value-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+              </svg>
+              <h3>כיבוד שלטון החוק</h3>
+              <p>כל שינוי חייב לעבור בכנסת, בהליך דמוקרטי שקוף, עם כל הבלמים והאיזונים.</p>
+            </div>
+            <div className="value-card">
+              <svg className="value-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+              </svg>
+              <h3>עמידה לצד הקורבנות</h3>
+              <p>זיכרון הנספים והנפגעים מחייב אותנו לפעול. המשפחות שלהם ראויות לצדק.</p>
+            </div>
+            <div className="value-card">
+              <svg className="value-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+              </svg>
+              <h3>אחריות לאומית</h3>
+              <p>חובתה של המדינה להגן על אזרחיה. אנחנו קוראים למקבלי ההחלטות לקחת אחריות.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Section */}
+      <section className="why">
+        <div className="container">
+          <div className="why-content">
+            <div className="why-text">
+              <span className="section-label">למה זה חשוב</span>
+              <h2>הרתעה אמיתית יכולה <span>להציל חיים</span></h2>
+              <p>
+                כיום, מחבלים שרוצחים אזרחים יודעים שגם במקרה של מאסר – הם עשויים להשתחרר בעסקאות עתידיות.
+                המציאות הזו פוגעת ביכולת ההרתעה של המדינה.
+              </p>
+              <p>
+                חקיקה של עונש מוות למקרים חריגים של טרור רצחני – בתוך מסגרת משפטית קפדנית –
+                עשויה לשנות את חישובי הסיכון של ארגוני הטרור ולמנוע פיגועים.
+              </p>
+              <div className="why-points">
+                <div className="why-point">
+                  <svg className="why-point-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                  <span className="why-point-text">עונש מידתי לפשעים חמורים ביותר</span>
+                </div>
+                <div className="why-point">
+                  <svg className="why-point-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                  <span className="why-point-text">מניעת שחרור רוצחים בעסקאות</span>
+                </div>
+                <div className="why-point">
+                  <svg className="why-point-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                  <span className="why-point-text">מסר ברור לאויבי ישראל</span>
+                </div>
+                <div className="why-point">
+                  <svg className="why-point-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                  <span className="why-point-text">צדק אמיתי למשפחות הנרצחים</span>
+                </div>
+              </div>
+            </div>
+            <div className="why-visual">
+              <div className="pin-showcase">
+                <img src={pinImage} alt="סיכת הצדק - חבל זהב" className="pin-image" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Product Section */}
+      <section className="product" id="product">
+        <div className="container">
+          <div className="product-content">
+            <div className="product-image">
+              <img src={pinImage} alt="סיכת הצדק - חבל זהב" className="product-pin-image" />
+            </div>
+            <div className="product-details">
+              <span className="section-label">אודות הסיכה</span>
+              <h2>סיכת אמייל איכותית</h2>
+              <p className="product-description">
+                סיכה סמלית בעיצוב מינימליסטי ורציני. עשויה מחומרים איכותיים
+                ומיוצרת בישראל. מתאימה לענידה על דש חליפה, תיק, או מדים.
+              </p>
+              <div className="product-price">₪49</div>
+              <a href="#" className="cta-button">
+                רוכש סיכה – מביע עמדה
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5m0 0l7-7m-7 7l7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Disclaimer Section */}
+      <section className="disclaimer">
+        <div className="container">
+          <div className="disclaimer-content">
+            <svg className="disclaimer-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+            </svg>
+            <h2>הצהרה אתית ומשפטית</h2>
+            <p>
+              רכישת הסיכה היא ביטוי דמוקרטי של עמדה אישית בלבד.
+              אנו תומכים אך ורק בפעולה חוקית, במסגרת ההליך הדמוקרטי,
+              ובהתאם לחוקי מדינת ישראל.
+            </p>
+            <p>
+              אין בסיכה זו קריאה לאלימות, להסתה, או לכל פעולה בלתי חוקית.
+              כל שינוי בחקיקה צריך לעבור את ההליך הפרלמנטרי המלא.
+            </p>
+            <div className="disclaimer-points">
+              <div className="disclaimer-point">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+                ביטוי דמוקרטי בלבד
+              </div>
+              <div className="disclaimer-point">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+                ללא קריאה לאלימות
+              </div>
+              <div className="disclaimer-point">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+                תמיכה בשלטון החוק
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="final-cta">
+        <div className="container">
+          <h2>
+            הגיע הזמן <span>להשמיע קול</span>.<br />
+            בצורה חוקית ומכובדת.
+          </h2>
+          <p>
+            כל סיכה היא קול נוסף בדיון הציבורי.
+            הצטרפו לאלפים שכבר מביעים את עמדתם.
+          </p>
+          <a href="#product" className="cta-button" onClick={scrollToProduct}>
+            להביע עמדה בצורה חוקית ומכובדת
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5m0 0l7-7m-7 7l7 7" />
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer>
+        <div className="container">
+          <div className="footer-content">
+            <div className="footer-logo">סיכת הצדק</div>
+            <p className="footer-text">
+              מיזם עצמאי לביטוי דמוקרטי של עמדה ציבורית.
+            </p>
+            <p className="footer-legal">
+              © 2024 כל הזכויות שמורות. האתר אינו מזוהה עם גוף ממשלתי או מפלגתי.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </>
+  )
+}
+
+export default App
+
