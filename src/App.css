@@ -508,7 +508,14 @@ section {
     font-size: 1.75rem;
     font-weight: 700;
     color: var(--color-accent);
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+}
+
+.shipping-note {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 24px;
+    font-weight: 400;
 }
 
 .product-details .cta-button {
@@ -988,7 +995,12 @@ footer {
 
     .product-price {
         font-size: 2rem;
-        margin-bottom: 24px;
+        margin-bottom: 12px;
+    }
+
+    .shipping-note {
+        font-size: 0.95rem;
+        margin-bottom: 32px;
     }
 
     .disclaimer-content {
