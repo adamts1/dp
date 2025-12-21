@@ -195,7 +195,6 @@ function App() {
                 ומיוצרת בישראל. מתאימה לענידה על דש חליפה, תיק, או מדים.
               </p>
               <div className="product-price">₪36</div>
-              <p className="shipping-note">המחיר כולל עלות משלוח</p>
               <a 
                 href="https://wa.me/972533807804?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%9C%D7%A8%D7%9B%D7%95%D7%A9%20%D7%A1%D7%99%D7%9B%D7%AA%20%D7%94%D7%A6%D7%93%D7%A7" 
                 target="_blank" 
