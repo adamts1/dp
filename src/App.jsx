@@ -67,7 +67,7 @@ function App() {
       <section className="hero">
         <div className="hero-content">
           <div className="hero-image animate-in">
-            <img src={pinImage} alt="סיכת הצדק" className="hero-pin-image" />
+            <img src={pinImage} alt="סיכת עונש מוות למחבלים למכירה - הסיכה של בן גביר למכירה" className="hero-pin-image" />
           </div>
           <span className="hero-badge animate-in delay-1">סמל של עמדה • ביטוי דמוקרטי</span>
           <h1 className="animate-in delay-2">
@@ -75,7 +75,7 @@ function App() {
             צדק הוא <span>אחריות</span>.
           </h1>
           <p className="hero-subtitle animate-in delay-3">
-            סיכה סמלית שמבטאת תמיכה בחקיקת עונש מוות למחבלים מורשעים –
+            סיכה סמלית שמבטאת תמיכה בחקיקת עונש מוות למחבלים מורשעים -
             במסגרת חוקית ודמוקרטית. לא שנאה. לא אלימות. עמדה ציבורית ברורה.
           </p>
           <a href="#product" className="cta-button animate-in delay-4" onClick={scrollToProduct}>
@@ -94,7 +94,7 @@ function App() {
             <span className="section-label">מה הסיכה מייצגת</span>
             <h2 className="section-title">ארבעה ערכים. עמדה אחת.</h2>
             <p className="section-description">
-              הסיכה היא לא רק אביזר – היא הצהרה שקטה אך ברורה על הערכים שמנחים אותנו כחברה.
+              הסיכה היא לא רק אביזר - היא הצהרה שקטה אך ברורה על הערכים שמנחים אותנו כחברה.
             </p>
           </div>
           <div className="values-grid">
@@ -138,11 +138,11 @@ function App() {
               <span className="section-label">למה זה חשוב</span>
               <h2>הרתעה אמיתית יכולה <span>להציל חיים</span></h2>
               <p>
-                כיום, מחבלים שרוצחים אזרחים יודעים שגם במקרה של מאסר – הם עשויים להשתחרר בעסקאות עתידיות.
+                כיום, מחבלים שרוצחים אזרחים יודעים שגם במקרה של מאסר - הם עשויים להשתחרר בעסקאות עתידיות.
                 המציאות הזו פוגעת ביכולת ההרתעה של המדינה.
               </p>
               <p>
-                חקיקה של עונש מוות למקרים חריגים של טרור רצחני – בתוך מסגרת משפטית קפדנית –
+                חקיקה של עונש מוות למקרים חריגים של טרור רצחני - בתוך מסגרת משפטית קפדנית -
                 עשויה לשנות את חישובי הסיכון של ארגוני הטרור ולמנוע פיגועים.
               </p>
               <div className="why-points">
@@ -174,7 +174,7 @@ function App() {
             </div>
             <div className="why-visual">
               <div className="pin-showcase">
-                <img src={pinImage} alt="סיכת הצדק - חבל זהב" className="pin-image" />
+                <img src={pinImage} alt="סיכת עונש מוות למחבלים למכירה - הסיכה של בן גביר למכירה" className="pin-image" />
               </div>
             </div>
           </div>
@@ -186,13 +186,15 @@ function App() {
         <div className="container">
           <div className="product-content">
             <div className="product-image">
-              <img src={pinImage} alt="סיכת הצדק - חבל זהב" className="product-pin-image" />
+              <img src={pinImage} alt="סיכת עונש מוות למחבלים למכירה - הסיכה של בן גביר למכירה" className="product-pin-image" />
             </div>
             <div className="product-details">
               <span className="section-label">אודות הסיכה</span>
+              <h2>סיכת עונש מוות למחבלים למכירה - הסיכה של בן גביר למכירה</h2>
               <p className="product-description">
-                עשויה מחומרים איכותיים
-                ומיוצרת בישראל. מתאימה לענידה על דש חליפה, תיק, או מדים.
+                סיכת עונש מוות למחבלים למכירה - הסיכה של בן גביר למכירה. 
+                עשויה מחומרים איכותיים ומיוצרת בישראל. מתאימה לענידה על דש חליפה, תיק, או מדים.
+                סיכה סמלית המבטאת תמיכה בחקיקת עונש מוות למחבלים מורשעים במסגרת חוקית ודמוקרטית.
               </p>
               <div className="product-price">₪36</div>
               <a 
