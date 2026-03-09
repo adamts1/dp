@@ -77,9 +77,9 @@ export const translations = {
     },
     hero: {
       badge: 'Symbole de position • Expression démocratique',
-      title: 'La justice n\'est pas la vengeance.\nLa justice est',
+      title: 'La justice ne cherche pas la vengeance, elle exige la ',
       titleHighlight: 'responsabilité',
-      subtitle: 'Une épingle symbolique exprimant le soutien à la législation sur la peine de mort pour les terroristes condamnés - dans un cadre légal et démocratique. Pas de haine. Pas de violence. Une position publique claire.',
+      subtitle: 'Une épingle symbolique exprimant le soutien à la législation de la peine de mort pour les terroristes condamnés - dans un cadre légal et démocratique. Pas de haine. Pas de violence. Une position publique claire.',
       cta: 'Acheter l\'épingle - Exprimer sa position',
     },
     values: {
