@@ -244,7 +244,7 @@ function App() {
         title={lang === 'he' ? 'Français' : 'עברית'}
         aria-label={lang === 'he' ? 'Switch to French' : 'עבור לעברית'}
       >
-        <span className="lang-flag">{lang === 'he' ? '🇮🇱' : '🇫🇷'}</span>
+        <span className="lang-flag">{lang === 'he' ? '🇫🇷' : '🇮🇱'}</span>
       </button>
 
       <footer>
