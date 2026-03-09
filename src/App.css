@@ -102,6 +102,27 @@ nav.scrolled {
     color: var(--color-bg-primary);
 }
 
+.lang-switcher-floating {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 1000;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.lang-switcher-floating:hover {
+    transform: scale(1.1);
+}
+
+.lang-flag {
+    font-size: 2rem;
+    line-height: 1;
+}
+
 /* ===== HERO SECTION - Mobile First ===== */
 .hero {
     min-height: 100vh;
@@ -312,6 +333,12 @@ section {
     background: linear-gradient(90deg, var(--color-accent), transparent);
     opacity: 0;
     transition: opacity 0.3s ease;
+}
+
+[dir="ltr"] .value-card::before {
+    right: auto;
+    left: 0;
+    background: linear-gradient(90deg, var(--color-accent), transparent);
 }
 
 .value-card:hover::before {
