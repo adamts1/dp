@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     document.documentElement.lang = lang
     document.documentElement.dir = isRtl ? 'rtl' : 'ltr'
-    document.title = lang === 'he' ? 'סיכת הצדק - עמדה לשינוי' : 'L\'Épinglette de la Justice - Une position pour le changement'
+    document.title = lang === 'he' ? 'סיכת עונש מוות למחבלים למכירה - סיכת הצדק והרתעה | Jerusalem Popup' : 'L\'Épinglette de la Justice - Une position pour le changement'
     localStorage.setItem('lang', lang)
   }, [lang])
 
