@@ -67,7 +67,7 @@ export const translations = {
     footer: {
       logo: 'סיכת הצדק',
       text: 'מיזם עצמאי לביטוי דמוקרטי של עמדה ציבורית.',
-      legal: '© 2024 כל הזכויות שמורות. האתר אינו מזוהה עם גוף ממשלתי או מפלגתי.',
+      legal: '© 2026 כל הזכויות שמורות. האתר אינו מזוהה עם גוף ממשלתי או מפלגתי.',
     },
   },
   fr: {
@@ -138,7 +138,7 @@ export const translations = {
     footer: {
       logo: 'L\'Épinglette de la Justice',
       text: 'Projet indépendant pour l\'expression démocratique d\'une position publique.',
-      legal: '© 2024 Tous droits réservés. Le site n\'est affilié à aucun organisme gouvernemental ou parti politique.',
+      legal: '© 2026 Tous droits réservés. Le site n\'est affilié à aucun organisme gouvernemental ou parti politique.',
     },
   },
 }

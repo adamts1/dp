@@ -80,7 +80,7 @@ function App() {
       <section className="hero">
         <div className="hero-content">
           <div className="hero-image animate-in">
-            <img src={pinImage} alt={t.nav.logo} className="hero-pin-image" />
+            <img src={pinImage} alt="סיכת עונש מוות למחבלים למכירה" className="hero-pin-image" />
           </div>
           <span className="hero-badge animate-in delay-1">{t.hero.badge}</span>
           <h1 className="animate-in delay-2">
@@ -162,7 +162,7 @@ function App() {
             </div>
             <div className="why-visual">
               <div className="pin-showcase">
-                <img src={pinImage} alt={t.nav.logo} className="pin-image" />
+                <img src={pinImage} alt="סיכת עוצמה יהודית איתמר בן גביר" className="pin-image" />
               </div>
             </div>
           </div>
@@ -173,7 +173,7 @@ function App() {
         <div className="container">
           <div className="product-content">
             <div className="product-image">
-              <img src={pinImage} alt={t.nav.logo} className="product-pin-image" />
+              <img src={pinImage} alt="סיכת הרתעה וצדק נגד טרור" className="product-pin-image" />
             </div>
             <div className="product-details">
               <span className="section-label">{t.product.label}</span>
