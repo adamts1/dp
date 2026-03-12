@@ -1,6 +1,57 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import pinImage from './assets/dp.jpeg'
+import img6700 from './assets/IMG_6700.jpeg'
+import img6699 from './assets/IMG_6699.jpeg'
+import img6698 from './assets/IMG_6698.jpeg'
+import imgExtra from './assets/CD771986-E7C2-4F8B-AADF-CAD0EE0D9345.JPG'
 import { translations } from './translations'
+
+const carouselImages = [img6700, img6699, img6698, imgExtra]
+
+function ImageCarousel({ className, imgClassName, alt, interval = 3000 }) {
+  const [current, setCurrent] = useState(0)
+  const timeoutRef = useRef(null)
+
+  const resetTimer = useCallback(() => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current)
+    timeoutRef.current = setTimeout(() => {
+      setCurrent(prev => (prev + 1) % carouselImages.length)
+    }, interval)
+  }, [interval])
+
+  useEffect(() => {
+    resetTimer()
+    return () => clearTimeout(timeoutRef.current)
+  }, [current, resetTimer])
+
+  const goPrev = () => setCurrent(prev => (prev - 1 + carouselImages.length) % carouselImages.length)
+  const goNext = () => setCurrent(prev => (prev + 1) % carouselImages.length)
+
+  return (
+    <div className={`carousel-wrapper ${className || ''}`}>
+      <div className="carousel-inner">
+        {carouselImages.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt={alt}
+            className={`${imgClassName || ''} carousel-slide ${i === current ? 'active' : ''}`}
+          />
+        ))}
+      </div>
+      <button className="carousel-btn carousel-btn-prev" onClick={goPrev} aria-label="Previous">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button className="carousel-btn carousel-btn-next" onClick={goNext} aria-label="Next">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  )
+}
 
 function App() {
   const navbarRef = useRef(null)
@@ -162,7 +213,7 @@ function App() {
             </div>
             <div className="why-visual">
               <div className="pin-showcase">
-                <img src={pinImage} alt="סיכת עוצמה יהודית איתמר בן גביר" className="pin-image" />
+                <ImageCarousel imgClassName="pin-image" alt="סיכת עוצמה יהודית איתמר בן גביר" interval={3000} />
               </div>
             </div>
           </div>
@@ -173,7 +224,7 @@ function App() {
         <div className="container">
           <div className="product-content">
             <div className="product-image">
-              <img src={pinImage} alt="סיכת הרתעה וצדק נגד טרור" className="product-pin-image" />
+              <ImageCarousel imgClassName="product-pin-image" alt="סיכת הרתעה וצדק נגד טרור" interval={4500} />
             </div>
             <div className="product-details">
               <span className="section-label">{t.product.label}</span>
