@@ -1187,3 +1187,49 @@ footer {
     }
 }
 
+/* ===== SEO FAQ SECTION ===== */
+.seo-faq {
+    border-top: 1px solid var(--color-border);
+    padding: 48px 16px;
+    background: var(--color-bg-secondary);
+}
+
+.seo-faq .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.seo-faq h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.seo-faq p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.seo-faq strong {
+    color: var(--color-text-primary);
+}
+
+@media (min-width: 768px) {
+    .seo-faq {
+        padding: 64px 24px;
+    }
+
+    .seo-faq h3 {
+        font-size: 1.35rem;
+    }
+
+    .seo-faq p {
+        font-size: 0.9rem;
+    }
+}
+
