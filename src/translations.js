@@ -47,7 +47,7 @@ export const translations = {
     },
     product: {
       label: 'אודות הסיכה',
-      description: 'עשויה מחומרים איכותיים ומיוצרת בישראל. מתאימה לענידה על דש חליפה, תיק, או מדים.',
+      description: 'עשויה מחומרים איכותיים. מתאימה לענידה על דש חליפה, תיק, או מדים.',
       cta: 'רכישת סיכה - מביע עמדה',
       whatsappText: 'היי, אני מעוניין/ת לרכוש סיכת הצדק',
     },
@@ -118,7 +118,7 @@ export const translations = {
     },
     product: {
       label: 'À propos de l\'épingle',
-      description: 'Fabriquée avec des matériaux de qualité et produite en Israël. Convient pour le revers de veste, sac ou uniforme.',
+      description: 'Fabriquée avec des matériaux de qualité. Convient pour le revers de veste, sac ou uniforme.',
       cta: 'Acheter l\'épingle - Exprimer sa position',
       whatsappText: 'Bonjour, je souhaite acheter l\'Épinglette de la Justice',
     },
